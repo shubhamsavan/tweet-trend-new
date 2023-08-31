@@ -6,9 +6,11 @@ pipeline {
     }
 
     stages {
-        stages('Clone-code') {
-          steps {
-              git branch 'main' , url: 'https://github.com/shubhamsavan/tweet-trend-new.git'
+        stage('Clone-code') {
+            steps {
+                script {
+                    git branch: 'main', url: 'https://github.com/shubhamsavan/tweet-trend-new.git'
+                }
             }
         }
     }
